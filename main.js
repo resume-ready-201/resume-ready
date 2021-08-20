@@ -38,8 +38,8 @@ class cookiePictures
   
 
   // Setting up all of our elements in the DOM to manipulate them
-  const cookietrain_header = document.getElementById("cookietrain-header");
-  const cookietrain_section = document.getElementById("cookietrain-section");
+  const COOKIETRAIN_HEADER = document.getElementById("cookietrain-header");
+  const COOKIETRAIN_SECTION = document.getElementById("cookietrain-section");
   
   //LEFT BUSMALL IMAGE AND TEXT
   const LEFT_COOKIE_IMAGE = document.getElementById("left-cookie-img");
@@ -258,8 +258,8 @@ class cookiePictures
   
   };
   
- // COOKIETRAIN_SECTION.addEventListener("click", handleClickOnPicture); 
- // randomPhotoClick(); 
+ COOKIETRAIN_SECTION.addEventListener("click", handleClickOnPicture); 
+ randomPhotoClick(); 
   
   //JSON AND LOCAL STORAGE FUNCTION
   
