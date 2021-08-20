@@ -19,16 +19,20 @@ class cookiePictures
   [
     new cookiePictures("white-chocolate-macadamia-nut-cookies", "./pictures/white-chocolate-macadamia-nut-cookies.jpg"),
     new cookiePictures("Snickerdoodle-Cookie", "./pictures/Snickerdoodle-Cookie-Recipe.jpg"),
-    new cookiePictures("Chocolate_Chip_CookieS", "./pictures/Chocolate_Chip_Cookie.jpg"),
-    new cookiePictures("Chocolate_Chip_CookieS", "./pictures/Chocolate_Chip_Cookie.jpg"),
+    new cookiePictures("Chocolate_Chip_Cookie", "./pictures/Chocolate_Chip_Cookie.jpg"),
+    new cookiePictures("Fortune-Cookies", "./pictures/Fortune-Cookies.jpg"),
+    new cookiePictures("Gingerbread-Cookie", "./pictures/Gingerbread-Cookie.jpg"),
+    new cookiePictures("Macaron-Cookies", "./pictures/Macaron-Cookies.jpg"),
+    new cookiePictures("Oatmeal-Raisin-Cookies", "./pictures/Oatmeal-Raisin-Cookies.jpg"),
+    new cookiePictures("Shortbread-Cookies", "./pictures/Shortbread-Cookies.jpg")
   ];
 
-  // console.log(cookiePictures); // Sanity test to figure out if the objects show up on the console.
+//console.log(allcookiePics); // Sanity test to figure out if the objects show up on the console.
   
   //variables
-  let leftBusMallPic = null; //What image would appear on the left.
-  let middleBusMallPic = null; // What image will appear in the middle.
-  let rightBusMallPic = null; // what image would appear on the right
+  let leftcookiePic = null; //What image would appear on the left.
+  let middlecookiePic = null; // What image will appear in the middle.
+  let rightcookiePic = null; // what image would appear on the right
   let totalClicks = 0; //total amount of clicks
   const MAX_CLICKS = 10; // amount of clicks allowed
   
@@ -57,14 +61,12 @@ class cookiePictures
   RESULTS_BUTTON.className = "btn btn-primary";
   RESULTS_BUTTON.innerText = "Click me to see results";
 
-  const RESULTS_BUTTON = document.createElement("button");
-  RESULTS_BUTTON.className = "btn btn-primary";
-  RESULTS_BUTTON.innerText = "Add here";
+  const ADD_BUTTON = document.createElement("button");
+  ADD_BUTTON.className = "btn btn-primary";
+  ADD_BUTTON.innerText = "Add here";
    
   let randomPhotoClick = function () 
-  {
-   
-    // this is an ANON function. 
+  { 
     let randomPhotoLeft = Math.floor(Math.random() * allcookiePics.length); // generates a random photo on the left side of the page
     let randomPhotoMiddle = Math.floor(Math.random() * allcookiePics.length); // generates a random photo in the middle of the page
     let randomPhotoRight = Math.floor(Math.random() * allcookiePics.length); // generates a random photo on the right side of the page
@@ -122,45 +124,48 @@ class cookiePictures
       const id = thingWeClickedOn.id; // to check what we have clicked! it checks the 'ID' of each PICTURE!
   
       // Mark that they were shown
-      leftBusMallPic.timesShown++; //increments the amount of times it has been clicked on the page!
-      middleBusMallPic.timesShown++; //increments the amount of times it has been clicked on the page!
-      rightBusMallPic.timesShown++; //increments the amount of times it has been clicked on the page!
+      leftcookiePic.timesShown++; //increments the amount of times it has been clicked on the page!
+      middlecookiePic.timesShown++; //increments the amount of times it has been clicked on the page!
+      rightcookiePic.timesShown++; //increments the amount of times it has been clicked on the page!
   
       //console log to check if the numbers are incrementing each time we click:
   
-      console.log(
-        `Left pic ${leftBusMallPic.nameofPicture} has been shown ${leftBusMallPic.timesShown}, middle pic ${middleBusMallPic.nameofPicture} has been shown ${middleBusMallPic.timesShown}, and the right pic ${rightBusMallPic.nameofPicture} has been shown ${rightBusMallPic.timesShown} so far.`
+      console.log
+      (
+        `Left pic ${leftcookiePic.nameofPicture} has been shown ${leftcookiePic.timesShown}, 
+        middle pic ${middlecookiePic.nameofPicture} has been shown ${middlecookiePic.timesShown}, 
+        and the right pic ${rightcookiePic.nameofPicture} has been shown ${rightcookiePic.timesShown} so far.`
       );
   
       // Check which was clicked and update counter
       if (
-        id === "left-busmall-img" ||
-        id === "right-busmall-img" ||
-        id === "middle-busmall-img"
+        id === "left-cookie-img" ||
+        id === "right-cookie-img" ||
+        id === "middle-cookie-img"
       ) {
-        //track the pcitures from the ids we recieved from the DOM.
+        //track the pictures from the ids we recieved from the DOM.
   
-        if (id === "left-busmall-img") {
+        if (id === "left-cookie-img") {
           // clicked on the left image
-          leftBusMallPic.clicks++; // adds to the amount of clicks!
+          leftcookiePic.clicks++; // adds to the amount of clicks!
           console.log(
-            `Left pic ${leftBusMallPic.nameofPicture} has ${leftBusMallPic.clicks} so far`
+            `Left pic ${leftcookiePic.nameofPicture} has ${leftcookiePic.clicks} so far`
           );
         }
   
-        if (id === "middle-busmall-img") {
+        if (id === "middle-cookie-img") {
           // clicked on the middle image
-          middleBusMallPic.clicks++; //adds to the amount of clicks!
+          middlecookiePic.clicks++; //adds to the amount of clicks!
           console.log(
-            `Middle pic ${middleBusMallPic.nameofPicture} has ${middleBusMallPic.clicks} so far`
+            `Middle pic ${middlecookiePic.nameofPicture} has ${middlecookiePic.clicks} so far`
           );
         }
   
-        if (id === "right-busmall-img") {
+        if (id === "right-cookie-img") {
           // clicked on the right image
-          rightBusMallPic.clicks++; //adds to the amount of clicks!
+          rightcookiePic.clicks++; //adds to the amount of clicks!
           console.log(
-            `Right pic ${rightBusMallPic.nameofPicture} has ${rightBusMallPic.clicks} so far`
+            `Right pic ${rightcookiePic.nameofPicture} has ${rightcookiePic.clicks} so far`
           );
         }
   
@@ -173,88 +178,66 @@ class cookiePictures
     totalClicks++;
     //when they reach total max clicks, remove the click function
     if (totalClicks === MAX_CLICKS) {
-      BUSMALL_SECTION.removeEventListener("click", handleClickOnPicture); // stops the user from clicking any more pictures in the section.
+      COOKIETRAIN_SECTION.removeEventListener("click", handleClickOnPicture); // stops the user from clicking any more pictures in the section.
       console.log("You picked 5 pictures, thanks!"); //sanity test to check if the max amount of clicks is documented
   
       // button to click to show results
       // button appears in if statement
-      BUSMALL_SECTION.appendChild(RESULTS_BUTTON); // make the button appear in our DOM.
+      COOKIETRAIN_SECTION.appendChild(RESULTS_BUTTON); // make the button appear in our DOM.
       RESULTS_BUTTON.addEventListener("click", finalResultsTotal); // Wrap the total results in a function and use an addevent listener to call the button!
       function finalResultsTotal() {
         makeAChart(); // call the function make a chart
         updateLocalData();
   
         // display the clicks to the page
-        for (let index = 0; index < allBusmallPics.length; index++) {
+        for (let index = 0; index < allcookiePics.length; index++) {
           //for loop to go through all of the pictures to see what was clicked
           // Probably can do this on one line with dot notation/nesting
           let newLiScore = document.createElement("li");
           newLiScore.className = "list-group-item"
-          newLiScore.innerText = `${allBusmallPics[index].nameofPicture}: ${allBusmallPics[index].clicks}`; // the name of the pic, and how many times it was clicked
+          newLiScore.innerText = `${allcookiePics[index].nameofPicture}: ${allcookiePics[index].clicks}`; // the name of the pic, and how many times it was clicked
           FINAL_SCORE.appendChild(newLiScore); // Add score
         }
       }
     }
   };
   
-  //================ LAB 2 ==================================//
+  //creating charts and arrays
   
-  // As a marketeer, I want to prevent users from seeing the same image in two subsequent iterations, so that they are not biased.
-  // Update your algorithm to randomly generate three unique product images from the images directory.
-  // Update your algorithm so that new products are generated, confirm that these products are not duplicates from the immediate previous set.
-  
-  // Using ChartJS (imported from CDN), display the vote totals and the number of times a product was viewed in a bar chart format. (hint: don’t forget about the <canvas> tags)
-  // Place the bar chart in the section located beneath your three product images
-  // The bar charts should only appear after all voting data has been collected.
-  
-  // ======================== CHART.JS TABLE DATA ============================ //
   function makeAChart() {
-    // ============= CREATING OUR ARRAY VALUES  ===================== //
-    // We placed all the table chart data inside of a function!
-    // FIrst, we need two arrays to hold our values
+
     let storeTheNamesArray = [];
     let storeTheTotalsArray = []; // empty array because we will push all the totals inside of this.
     let timesShownArray = [];
   
-    // lets start with our names for loop because we want to iterate through the object array and grab all the names.
-    // ======= storing the names array ========= //
-    for (i = 0; i < allBusmallPics.length; i++) {
-      // what do we want to do next?
-      // we want to push ALL of our names inside of our 'storeTheNameArray'
-  
-      storeTheTotalsArray.push(allBusmallPics[i].clicks); //lets try storing that array as soon as the button is clicked
-      storeTheNamesArray.push(allBusmallPics[i].nameofPicture); // ets store all the names inside of our array!
-      timesShownArray.push(allBusmallPics[i].timesShown); // let's store all of the timesshown inside of our array!
+    for (i = 0; i < allcookiePics.length; i++) 
+    {
+      
+      storeTheTotalsArray.push(allBusmallPics[i].clicks); 
+      storeTheNamesArray.push(allBusmallPics[i].nameofPicture); 
+      timesShownArray.push(allBusmallPics[i].timesShown); 
     }
   
     console.log(storeTheNamesArray); //debugging
     console.log(storeTheTotalsArray); //debugging
     console.log(timesShownArray); //debugging
-  
-    // ==== END OF STORING OUR ARRAY VALUES ===== //
-  
-    // Now that we have our data, we can make a chart for it!
-  
-    // ============ CREATING THE BAR CHART ================//
-  
-    // we create a label which is our array of names!
+    
+    //creating a bar chart
     const labelsForChart = storeTheNamesArray;
-    //MATCHING VALUES THAT APPLY FOR OUR LABELS
-  
-    const data = {
-      labels: labelsForChart, // refrence your array that you stored your names!
+    const data = 
+    {
+      labels: labelsForChart, 
       datasets: [
         {
-          label: "Clicks", // This will show up as text in our chart
+          label: "Clicks", 
           backgroundColor: "rgb(255, 99, 132)",
           borderColor: "rgb(255, 99, 132)",
-          data: storeTheTotalsArray, // store your click totals array here!
-        },
+          data: storeTheTotalsArray, 
         {
-          label: "Times Image Is Shown", // This will show up as text in our chart
+          label: "Times Image Is Shown", 
           backgroundColor: "#99FF99",
           borderColor: "#99FF99",
-          data: timesShownArray, // store your times shown totals array here!
+          data: timesShownArray, 
         },
       ],
     };
@@ -266,72 +249,43 @@ class cookiePictures
     };
   
     //   POE:
-    let myBusMallChart = new Chart( //creating a new busmall chart object! (remember that everything really IS an object)
+    let mycookieChart = new Chart( 
       document.getElementById("myChart"),
       configTheData
     );
   
-    // I have to have an array of product image objects to get this chart working!
-    //   iterate through objects name and counts and push it into two arrays
-  
-    // =================END OF CHART.JS ==================================== //
   }
   
-  BUSMALL_SECTION.addEventListener("click", handleClickOnPicture); // adding the event listener to the section!
-  randomPhotoClick(); //starts us off when the user first loads the page.
+  COOKIETRAIN_SECTION.addEventListener("click", handleClickOnPicture); 
+  randomPhotoClick(); 
   
-  // ============= WORKING ON LOCAL STORAGE ========== //
+  //JSON AND LOCAL STORAGE FUNCTION
   
-  // TODO:
-  
-  // As a user, I would like my data to persistently track totals between page refreshes,
-  //  so that I can keep track of the aggregate number of votes.
-  
-  //we want to store all the generated data inside the page so we can keep adding more!
-  
-  // Implement local storage into your current application
-  // Make sure the data persists across both browser refreshes and resets
-  // Hints:
-  
-  // Store the products array into local storage as a formatted JSON string
-  // Retrieve the products array from local storage and then utilize the JSON.Parse() function.
-  
-  function updateLocalData() {
-    // function we will use to store the data we want
-    const arrayString = JSON.stringify(allBusmallPics); // global array set to a JSON string to transfer data.
+  function updateLocalData() 
+  { 
+    const arrayString = JSON.stringify(allcookiePics); 
     //  console.log(`${arrayString}`) //debugging works. shows up in console.
-    // using key/ value pairs to show up in local storage
-    localStorage.setItem("allproducts", arrayString); // we are using the power local storage to save our objects.
+    
+    localStorage.setItem("allproducts", arrayString); 
   
-    //  summary so far:
-    //we have made a variable to transfer our array into a string
-    // we have JSON stringified our array of data.
-    // we have set our data into a local storage for reuse!
   }
   
-  // NEXT STEPS:
-  // where would we want to call our 'get local storage'?
-  
-  function getLocalStorage() {
-    // getting the stored data from the local storage
-  
-    // Here, we are retriving the data from the local storage
+  function getLocalStorage() 
+  {
+   
     const oldData = localStorage.getItem("allproducts");
   
     // console.log(` old data is ${oldData}`); // debugger works
   
-    // Here, we create another variable that uses JSON parse. this makes sure that all the string data is turned back into something we use for our JS.
     const allProductData = JSON.parse(oldData);
   
-    // if product data is null, we can throw an error
+   
     if (allProductData !== null) {
-      allBusmallPics = allProductData;
+      allcookiePics = allProductData;
     } else {
       console.log("Local Storage ready...");
     }
   }
   
-  getLocalStorage(); // lets call it here. It retrieves all the data and saves it
+  getLocalStorage(); 
   
-  //TODO: REFRESH ON EVENT LISTENERS
-  // TODO: Research more on why we use ANON functions.
