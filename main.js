@@ -204,7 +204,8 @@ class cookiePictures
   
   //creating charts and arrays
   
-  function makeAChart() {
+  function makeAChart()
+  {
 
     let storeTheNamesArray = [];
     let storeTheTotalsArray = []; // empty array because we will push all the totals inside of this.
@@ -227,13 +228,14 @@ class cookiePictures
     const data = 
     {
       labels: labelsForChart, 
-      datasets: [
+      datasets:
+      [
         {
           label: "Clicks", 
           backgroundColor: "rgb(255, 99, 132)",
           borderColor: "rgb(255, 99, 132)",
           data: storeTheTotalsArray, 
-        {
+        
           label: "Times Image Is Shown", 
           backgroundColor: "#99FF99",
           borderColor: "#99FF99",
@@ -254,10 +256,10 @@ class cookiePictures
       configTheData
     );
   
-  }
+  };
   
-  COOKIETRAIN_SECTION.addEventListener("click", handleClickOnPicture); 
-  randomPhotoClick(); 
+ // COOKIETRAIN_SECTION.addEventListener("click", handleClickOnPicture); 
+ // randomPhotoClick(); 
   
   //JSON AND LOCAL STORAGE FUNCTION
   
@@ -267,7 +269,6 @@ class cookiePictures
     //  console.log(`${arrayString}`) //debugging works. shows up in console.
     
     localStorage.setItem("allproducts", arrayString); 
-  
   }
   
   function getLocalStorage() 
